@@ -5,6 +5,9 @@ import {RootState} from '@src/redux/storeConfig';
 import {appStore} from '@src/redux/app/selector';
 import {GlobalStyle, StyledPageWrapper} from '@src/styled';
 
+import Header from '@src/components/Header/Header';
+import ChangeThemeBtn from '@src/components/ChangeThemeBtn/ChangeThemeBtn';
+
 interface IAppProps {
   colorTheme: string
   colorSpectrum: Record<string, string>
@@ -14,11 +17,11 @@ const App = ({colorTheme, colorSpectrum}: IAppProps) => {
   return (
     <>
       <GlobalStyle colorSpectrum={colorSpectrum}/>
-      <StyledPageWrapper>
-
-      </StyledPageWrapper>
+      <Header>
+        <ChangeThemeBtn/>
+      </Header>
+      <StyledPageWrapper colorSpectrum={colorSpectrum} />
     </>
-
   )
 }
 

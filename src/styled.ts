@@ -1,9 +1,6 @@
-import styled, {createGlobalStyle, css} from 'styled-components';
+import styled, {createGlobalStyle} from 'styled-components';
 
-export const FONT = {
-  DEFAULT_FONT: 'Roboto, sans-serif',
-  DEFAULT_FONT_SIZE: '12px',
-};
+import {FONT} from '@src/constants/constants';
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -16,15 +13,14 @@ export const GlobalStyle = createGlobalStyle`
   body {
     user-select: none;
     font-weight: normal;
-    background-color: ${props => props.colorSpectrum.MAIN_BACKGROUND};
   }
 `
 
 export const StyledPageWrapper = styled.div`
   margin: 0 auto;
-  max-width: 1200px;
+  background-color: ${props => props.colorSpectrum.MAIN_BACKGROUND};
   width: 100%;
-  height: 50px;
+  height: 90vh;
   color: white;
-  border: 1px solid red;
+  transition: .2s;
 `;
